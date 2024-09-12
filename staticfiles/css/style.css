@@ -113,24 +113,24 @@ body {
 
 .btn-signup,
 .btn-edit {
-    background-color: #188181;
+    background-color: #006666;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+    background-color: #ffcc99;
+    color: #006666;
 }
 
 .link {
-    color: #23BBBB;
+    color: #006666;
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #003366;
     text-decoration: underline;
 }
 
