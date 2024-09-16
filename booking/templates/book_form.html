@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load cloudinary %}
+{% load crispy_forms_tags %}
+
+<!-- book form container with bookstrap margin on top and bottom -->
+<div class="container-fluid col-sm-6 mt-5 mb-5">
+    <h1>Your Book's Details</h1>
+    <div class="row">
+    {% if user.is_authenticated %}
+        <!-- add csrf token and crispy forms -->
+        {% csrf_token %} {% crispy form %}
+
+    {% endif %}
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block copyright %}
+Copyright 2023 by DIMMANDO
+{% endblock %}
