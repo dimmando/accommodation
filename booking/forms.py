@@ -14,30 +14,16 @@ class BookForm(forms.ModelForm):
     class Meta:
         model = BookPost
         fields = [
-            'accommodation_type',
             'title',
-            'book_image',
-            'price_per_night',
+            'description',
+            'accommodation_type',
             'city',
+            'price_per_night',
+            'booking_image',
             'owner_email',
             'owner_phone',
-            'description',
         ]
 
-
-    # class Meta:
-    #     model = BookPost
-    #     fields = [
-    #         'title',
-    #         'book_author',
-    #         'description',
-    #         'genre',
-    #         'condition',
-    #         'reserved',
-    #         'book_image',
-    #         'owner_email',
-    #         'owner_phone',
-    #     ]
 
     def __init__(self, *args, **kwargs):
         """
@@ -47,13 +33,12 @@ class BookForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Field('title'),
-            Field('book_author'),
-            Field('description', placeholder="Add the blurb here"),
-            Field('genre'),
-            Field('condition'),
-            Field('reserved'),
-            Field('book_image'),
+            Field('description', placeholder="Add some details"),
+            Field('accommodation_type'),
+            Field('city'),
+            Field('price_per_night'),
+            Field('booking_image'),
             Field('owner_email'),
             Field('owner_phone', placeholder="Defaults to Irish numbers"),
-            Submit('submit', 'Add my Book!', css_class='btn btn-success my-4'),
+            Submit('submit', 'Add my property!', css_class='btn btn-success my-4'),
         )

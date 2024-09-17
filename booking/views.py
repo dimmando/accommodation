@@ -32,7 +32,7 @@ class BookDetail(View):
 
         return render(
             request,
-            "book_detail.html",
+            "index.html",
             {
                 "book": book
             },
@@ -57,7 +57,7 @@ class BookCreateView(LoginRequiredMixin, CreateView):
         https://docs.djangoproject.com/en/4.2/ref/contrib/messages/
         https://stackoverflow.com/questions/28723266/django-display-message-after-post-form-submit
         """
-        messages.success(self.request, 'Successfully added your Book!')
+        messages.success(self.request, 'Successfully added your Property!')
         form.instance.post_owner = self.request.user
         return super().form_valid(form)
 
@@ -74,7 +74,7 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         """
         Method to only allow the post_owner of the
-        book post to update that post
+        property post to update that post
         https://stackoverflow.com/questions/65402719/updateview-and-preventing-users-from-editing-other-users-content
         """
         book = self.get_object()
@@ -85,10 +85,10 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def form_valid(self, form):
         """
         Method to set the user that edited to the post_owner (post author)
-        message set to update the user when the book has been posted
+        message set to update the user when the property has been posted
         https://stackoverflow.com/questions/28723266/django-display-message-after-post-form-submit
         """
-        messages.success(self.request, 'Successfully updated your Book!')
+        messages.success(self.request, 'Successfully updated your Property!')
         form.instance.post_owner = self.request.user
         return super().form_valid(form)
 
@@ -116,7 +116,7 @@ class BookDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         On success, report success message for deletion
         https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
         """
-        messages.success(self.request, "Your Book has been deleted!")
+        messages.success(self.request, "Your Property has been deleted!")
         return reverse('home')
     template_name = 'book_delete.html'
 
