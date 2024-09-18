@@ -10,25 +10,25 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for post in post_list %}
+                {% for post in book_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
+                                {% if "placeholder" in post.booking_image.url %}
                                 <img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                   alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}"
+                                <img class="card-img-top" src=" {{ post.booking_image.url }}"
                                   alt="{{ post.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                            <a href="{% url 'book_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt|truncatewords:5 }}</p>
+                                <p class="card-text">{{ post.description|truncatewords:5 }}</p>
                             </a>
 
                             <hr>

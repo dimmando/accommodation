@@ -73,8 +73,7 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         """
-        Method to only allow the post_owner of the
-        property post to update that post
+        Method to only allow the owner of the property post to update that post
         https://stackoverflow.com/questions/65402719/updateview-and-preventing-users-from-editing-other-users-content
         """
         book = self.get_object()
@@ -84,7 +83,7 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def form_valid(self, form):
         """
-        Method to set the user that edited to the post_owner (post author)
+        Method to set the user that edited to the post_owner
         message set to update the user when the property has been posted
         https://stackoverflow.com/questions/28723266/django-display-message-after-post-form-submit
         """
