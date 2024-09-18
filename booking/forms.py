@@ -33,10 +33,10 @@ class BookForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Field('title'),
-            Field('description', placeholder="Add some details"),
+            Field('description', maxlength="600", placeholder="Add some details"),
             Field('accommodation_type'),
             Field('city'),
-            Field('price_per_night'),
+            Field('price_per_night', label='Price per night, &euro;'),
             Field('booking_image'),
             Field('owner_email'),
             Field('owner_phone', placeholder="Defaults to Irish numbers"),

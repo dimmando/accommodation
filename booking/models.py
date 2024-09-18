@@ -8,6 +8,8 @@ from autoslug import AutoSlugField
 from django.urls import reverse
 from phonenumber_field.modelfields import PhoneNumberField
 
+from django.utils.html import mark_safe
+from django.contrib import admin
 
 # Create your models here.
 
@@ -59,3 +61,11 @@ class BookPost(models.Model):
         https://ngangasn.com/what-is-get_absolute_url-in-django/
         """
         return reverse('book_detail', args=[str(self.slug)])
+
+    def image_tag(self):
+        if self.booking_image:
+            return mark_safe(f'<img src="{self.booking_image.url}" width="150" height="150" />')
+        return "No Image"
+
+    image_tag.short_description = 'Image Preview'
+

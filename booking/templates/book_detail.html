@@ -5,55 +5,47 @@
 <div class="container">
     <div class="row p-5 d-flex justify-content-around">
         <!-- div housing the image -->
-        <div class="col-sm-4">
+        <div class="col-sm-6">
             <div class="image-container img-fluid pb-4">
-                <!-- if the placeholder is used in the bookpost, load the placeholder image -->
-                {% if "placeholder" in book.book_image.url %}
-                <img class="book-image"
-                    src="https://res.cloudinary.com/dygj0wxf0/image/upload/v1700072067/placeholder-image_hjgthw.jpg"
-                    alt="Book Placeholder Image">
+                <!-- if the placeholder is used in the booking post, load the placeholder image -->
+                {% if 'placeholder' in book.booking_image.url %}
+                <img class="book-image" src="{% static 'images/default.jpg' %}" width="300" alt="Property placeholder image">
                 {% else %}
-                <img class="book-image" src="{{ book.book_image.url }}" alt="Image for {{ book.title }}">
+                <img class="book-image" src="{{ book.booking_image.url }}" width="300" alt="Image for {{ book.title }}">
                 {% endif %}
             </div>
         </div>
-        <!-- div presenting the book's information -->
+        <!-- div presenting the property's information -->
         <div class="col-sm-6">
             <h2>{{ book.title }}</h2>
-            <h3>{{ book.book_author }}</h3>
-            <h4>{{ book.post_owner }} | {{ book.created_on }}</h4>
-            <!-- Display instance to show the string value of the choice field -->
-            <!-- https://docs.djangoproject.com/en/4.2/ref/models/instances/ -->
-            <span><strong>Condition:</strong> {{ book.get_condition_display }}</span>
-            <br>
-            <span><strong>Genre:</strong> {{ book.genre }}</span>
+            <h4>{{ book.accommodation_type }} in {{ book.city }}</h4>
+            <span><strong>Price:</strong> &euro; {{ book.price_per_night }}/night</span>
+            <br><br>
             <p class="book-text">{{ book.description | safe}}</p>
             <!-- The user can only view the contact details of the owner -->
             <!-- if they are logged in/authenticated -->
-            <!-- If the book has been reserved, contact details are not available -->
-            {% if book.reserved == True %}
-            <span class="reserved"><strong>This book has been reserved</strong></span>
-            <!-- if the user is logged in they can view the user's contact details -->
-            {% elif user.is_authenticated %}
+            {% if user.is_authenticated %}
             <div class="contact-details">
                 <span class="email"><strong>Email:</strong> {{ book.owner_email }}</span>
                 <br>
-                <span class="phone"><strong>Tel:</strong> {{ book.owner_phone }}</span>
+                <span class="phone"><strong>Phone:</strong> {{ book.owner_phone }}</span>
             </div>
             {% else %}
             <!-- user is encouraged to log in if they are not logged in -->
             <div class="contact-details">
                 <span class="contact-auth">
-                    To view {{ book.post_owner }}'s contact details please
-                    <a href="{% url 'account_signup' %}" aria-label="Signup link">Signup</a>/<a
+                    To view {{ book.title }}'s contact details please
+                    <a href="{% url 'account_signup' %}" aria-label="Signup link">Signup</a> or <a
                         href="{% url 'account_login' %}" aria-label="Login Link">Login</a>
                 </span>
             </div>
             {% endif %}
+            <br>
             {% if book.post_owner == request.user %}
             <div class="ud-container">
-                <a href="{% url 'book_update' slug=book.slug %}" class="btn btn-sm edit-button"
+                <a href="{% url 'book_update' slug=book.slug %}" class="btn btn-sm btn-edit"
                     aria-label="Edit Button for {{ book.title }}">Edit</a>
+                    &nbsp;
                 <a href="{% url 'book_delete' slug=book.slug %}" class="btn btn-danger btn-sm"
                     aria-label="Delete button for {{ book.title }}">Delete</a>
             </div>

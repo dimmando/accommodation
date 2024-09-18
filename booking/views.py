@@ -23,7 +23,7 @@ class BookView(generic.ListView):
 
 class BookDetail(View):
     """
-    View to display the details of the book post to the user
+    View to display the details of the property for booking
     """
 
     def get(self, request, slug, *arg, **kwarg):
@@ -32,7 +32,7 @@ class BookDetail(View):
 
         return render(
             request,
-            "index.html",
+            "book_detail.html",
             {
                 "book": book
             },
