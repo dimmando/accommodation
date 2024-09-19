@@ -16,14 +16,14 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.booking_image.url %}
-                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                <img class="card-img-top" src="{% static 'images/default.png' %}"
                                   alt="placeholder image">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.booking_image.url }}"
                                   alt="{{ post.title }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
+                                    <p class="author">&euro; {{ post.price_per_night }} / night</p>
                                 </div>
                             </div>
                             <a href="{% url 'book_detail' post.slug %}" class="post-link">
@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-    {% if is_paginated %}
+    <!-- {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
@@ -58,11 +58,46 @@
             {% endif %}
         </ul>
     </nav>
-    {% endif %}
+    {% endif %} -->
+
+{% block navigation %}
+{% if page_obj.has_other_pages %}
+<nav class="list-pages">
+    <ul>
+		{% if page_obj.has_previous %}
+		<li class="page-num">
+			<a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+		</li>
+		{% endif %}
+
+        {% for p in paginator.page_range %}
+		{% if page_obj.number == p %}
+		<li class="page-num page-num-selected">{{ p }}</li>
+		{% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+        <li class="page-num">
+            <a href="?page={{ p }}">{{ p }}</a>
+        </li>
+		{% endif %}
+        {% endfor %}
+
+		{% if page_obj.has_next %}
+		<li class="page-num">
+			<a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+		</li>
+		{% endif %}
+
+    </ul>
+</nav>
+{% endif %}
+{% endblock %}
 </div>
+
+
 
 <!-- index.html content ends here -->
 {% endblock %}
+
+
 
 {% block copyright %}
 Copyright 2023 by DIMMANDO

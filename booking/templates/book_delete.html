@@ -3,12 +3,24 @@
 {% load static %}
 
 <!-- Container for the div storing the deletion form -->
-<div class="container-fluid col-sm-6 mt-5 mb-5 text-center">
+<div class="container-fluid col-sm-6 mb-5 text-center">
 <form method="post">{% csrf_token %}
 
-    <h3 class="py-5">Are you sure you want to delete "{{ object.title }}"?</h3>
+    <h3 class="py-1">Are you sure you want to delete<br>"{{ object.title }}"?</h3>
+    
+    <div class="image-container img-fluid">
+        <!-- if the placeholder is used in the booking post, load the placeholder image -->
+        {% if 'placeholder' in object.booking_image.url %}
+        <img class="book-image" src="{% static 'images/default.png' %}" width="300" alt="Property placeholder image">
+        {% else %}
+        <img class="book-image" src="{{ object.booking_image.url }}" width="300" alt="Image for {{ book.title }}">
+        {% endif %}
+    </div>
+    
+    <br>
     <!-- button to confirm and proceed with deletion -->
     <input class="btn btn-danger" type="submit" value="Delete">
+    &nbsp;
     <!-- cancel button to revert back to the previous page in the window history, sourced from the link below -->
     <!-- https://snakeycode.wordpress.com/2016/08/25/add-a-cancel-button-to-django-delete-confirm-template/ -->
     <button onclick="window.history.back();" class="btn btn-info" type="button">Cancel</button>

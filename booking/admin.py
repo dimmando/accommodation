@@ -22,5 +22,5 @@ class PostAdmin(admin.ModelAdmin):
 
 
 admin.site.site_title = "Sweet Home Accommodation"
-admin.site.site_header = "Sweet Home Accommodation administrator panel"
 admin.site.index_title = "Administration panel"
+admin.site.site_header = "Sweet Home Accommodation administrator panel"

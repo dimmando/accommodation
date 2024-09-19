@@ -3,13 +3,13 @@
 {% load static %}
 
 <div class="container">
-    <div class="row p-5 d-flex justify-content-around">
+    <div class="row p-4 d-flex justify-content-around">
         <!-- div housing the image -->
         <div class="col-sm-6">
             <div class="image-container img-fluid pb-4">
                 <!-- if the placeholder is used in the booking post, load the placeholder image -->
                 {% if 'placeholder' in book.booking_image.url %}
-                <img class="book-image" src="{% static 'images/default.jpg' %}" width="300" alt="Property placeholder image">
+                <img class="book-image" src="{% static 'images/default.png' %}" width="300" alt="Property placeholder image">
                 {% else %}
                 <img class="book-image" src="{{ book.booking_image.url }}" width="300" alt="Image for {{ book.title }}">
                 {% endif %}
