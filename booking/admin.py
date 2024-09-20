@@ -7,7 +7,7 @@ from .models import BookPost
 @admin.register(BookPost)
 class PostAdmin(admin.ModelAdmin):
 
-    list_display = ('image_tag', 'title', 'slug', 'accommodation_type', 'city', 'price_per_night', 'created_on')
+    list_display = ('image_tag', 'post_owner', 'title', 'slug', 'accommodation_type', 'city', 'price_per_night', 'created_on')
     readonly_fields = ('image_tag',)
     search_fields = ['title', 'content']
     list_filter = ('city', 'created_on',)

@@ -13,7 +13,7 @@ from .forms import BookForm
 class BookView(generic.ListView):
     """
     https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-display/
-    View from generic for viewing the current book posts
+    View from generic for viewing the current real estate scope
     """
     model = BookPost
     queryset = BookPost.objects.order_by('-created_on')
@@ -119,3 +119,20 @@ class BookDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         messages.success(self.request, "Your Property has been deleted!")
         return reverse('home')
     template_name = 'book_delete.html'
+
+
+class PropertyView(LoginRequiredMixin, generic.ListView):
+    """
+    https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-display/
+    View from generic for viewing the current book posts
+    """
+    model = BookPost
+    # queryset = BookPost.objects.order_by('-created_on')
+    template_name = 'property_list.html'
+    context_object_name = 'property_list'
+
+    def get_queryset(self):
+        """
+        Override method to customize queryset for the view
+        """
+        return BookPost.objects.filter(post_owner=self.request.user)

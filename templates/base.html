@@ -2,7 +2,6 @@
 
 {% url 'home' as home_url %}
 
-
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -60,10 +59,13 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link {% if request.path == property_create %}active" aria-label="page{% endif %}" href="{% url 'property_create' %}">Add property</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == property_create %}active" aria-label="page{% endif %}" href="{% url 'property_create' %}">Add property</a>
+                        <a class="nav-link {% if request.path == property_list %}active" aria-label="page{% endif %}" href="{% url 'property_list' %}">My property</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -106,6 +108,9 @@
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
+
+        {% block navigation %}
+        {% endblock %}
 
     </main>
 

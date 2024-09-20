@@ -3,59 +3,75 @@
 {% load static %}
 
 
+{% for property in property_list %}
+<!-- {% if property.post_owner == request.user %} -->
+
 <div class="container">
     <div class="row p-4 d-flex justify-content-around">
         <!-- div housing the image -->
         <div class="col-sm-6">
             <div class="image-container img-fluid pb-4">
                 <!-- if the placeholder is used in the booking post, load the placeholder image -->
-                {% if 'placeholder' in book.booking_image.url %}
+                {% if 'placeholder' in property.booking_image.url %}
                 <img class="book-image" src="{% static 'images/default.png' %}" width="300" alt="Property placeholder image">
                 {% else %}
-                <img class="book-image" src="{{ book.booking_image.url }}" width="300" alt="Image for {{ book.title }}">
+                <img class="book-image" src="{{ property.booking_image.url }}" width="300" alt="Image for {{ property.title }}">
                 {% endif %}
             </div>
         </div>
         <!-- div presenting the property's information -->
         <div class="col-sm-6">
-            <h2>{{ book.title }}</h2>
-            <h4>{{ book.accommodation_type }} in {{ book.city }}</h4>
-            <span><strong>Price:</strong> &euro; {{ book.price_per_night }}/night</span>
+            <h2>{{ property.title }}</h2>
+            <h4>{{ property.accommodation_type }} in {{ property.city }}</h4>
+            <span><strong>Price:</strong> &euro; {{ property.price_per_night }}/night</span>
             <br><br>
-            <p class="book-text">{{ book.description | safe}}</p>
+            <p class="book-text">{{ property.description | safe}}</p>
             <!-- The user can only view the contact details of the owner -->
             <!-- if they are logged in/authenticated -->
             {% if user.is_authenticated %}
             <div class="contact-details">
-                <span class="email"><strong>Email:</strong> {{ book.owner_email }}</span>
+                <span class="email"><strong>Email:</strong> {{ property.owner_email }}</span>
                 <br>
-                <span class="phone"><strong>Phone:</strong> {{ book.owner_phone }}</span>
+                <span class="phone"><strong>Phone:</strong> {{ property.owner_phone }}</span>
             </div>
             {% else %}
             <!-- user is encouraged to log in if they are not logged in -->
             <div class="contact-details">
                 <span class="contact-auth">
-                    To view {{ book.title }}'s contact details please
+                    To view {{ property.title }}'s contact details please
                     <a href="{% url 'account_signup' %}" aria-label="Signup link">Signup</a> or <a
                         href="{% url 'account_login' %}" aria-label="Login Link">Login</a>
                 </span>
             </div>
             {% endif %}
             <br>
-            {% if book.post_owner == request.user %}
+            {% if property.post_owner == request.user %}
             <div class="ud-container">
-                <a href="{% url 'book_update' slug=book.slug %}" class="btn btn-sm btn-edit"
-                    aria-label="Edit Button for {{ book.title }}">Edit</a>
+                <a href="{% url 'book_update' slug=property.slug %}" class="btn btn-sm btn-edit"
+                    aria-label="Edit Button for {{ property.title }}">Edit</a>
                     &nbsp;
-                <a href="{% url 'book_delete' slug=book.slug %}" class="btn btn-danger btn-sm"
-                    aria-label="Delete button for {{ book.title }}">Delete</a>
+                <a href="{% url 'book_delete' slug=property.slug %}" class="btn btn-danger btn-sm"
+                    aria-label="Delete button for {{ property.title }}">Delete</a>
             </div>
             {% endif %}
         </div>
     </div>
 </div>
 
+{% if not forloop.last %}
+<hr>
+{% endif %}
+
+<!-- {% endif %} -->
+
+{% empty %}
+<div class="container-fluid col-sm-6 mt-5 mb-5 text-center">
+<h1 class="py-1">No property found</h1>
+</div>
+{% endfor %}
+
 {% endblock content %}
+
 
 {% block copyright %}
 Copyright 2023 by DIMMANDO
