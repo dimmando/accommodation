@@ -29,13 +29,13 @@ class BookPost(models.Model):
         User, on_delete=models.CASCADE, related_name='book_posts'
     )
 
-    title = models.CharField(max_length=50)
-    description = models.TextField()
+    title = models.CharField(max_length=50, null=False, blank=False)
+    description = models.TextField(max_length=600, null=False, blank=False)
     accommodation_type = models.CharField(max_length=10, choices=ACCOMMODATION_TYPES)
-    city = models.CharField(max_length=100)
-    price_per_night = models.DecimalField(max_digits=10, decimal_places=0)
+    city = models.CharField(max_length=100, null=False, blank=False)
+    price_per_night = models.DecimalField(max_digits=10, decimal_places=0, null=False, blank=False)
     booking_image = CloudinaryField('booking_image', default='placeholder')
-    owner_email = models.EmailField()
+    owner_email = models.EmailField(max_length=100, null=False, blank=False)
     owner_phone = PhoneNumberField(region="IE")
 
     created_on = models.DateTimeField(auto_now_add=True)
