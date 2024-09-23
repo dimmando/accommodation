@@ -6,14 +6,19 @@
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
 
+{% url 'property_create' as property_create_url %}
+{% url 'property_list' as property_list_url %}
+
+
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
-<head>
-    <title>SWEET HOME | accommodation service</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Short-term accommodation service that allow anyone to provide their properties for rent">
     <meta name="keywords" content="BnB, Booking, Accommodation, short-term accommodation, vacation rentals, property rental service, rent your home, short stay rentals, temporary housing, holiday rentals, host properties, rent out property, rental marketplace, apartment rentals, home sharing, short-term stays, list your property, vacation homes, property hosting platform, rent by owner, furnished rentals, house rentals, room rentals, rental platform">
+    <meta name="author" content="Dmytro Chesnokov, E-mail: dimmando@ukr.net">
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -36,10 +41,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}">
 
+    <title>SWEET HOME | accommodation service</title>
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-
+    <header>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
@@ -59,10 +65,10 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == property_create %}active" aria-label="page{% endif %}" href="{% url 'property_create' %}">Add property</a>
+                        <a class="nav-link {% if request.path == property_create_url %}active" aria-label="page{% endif %}" href="{% url 'property_create' %}">Add property</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == property_list %}active" aria-label="page{% endif %}" href="{% url 'property_list' %}">My property</a>
+                        <a class="nav-link {% if request.path == property_list_url %}active" aria-label="page{% endif %}" href="{% url 'property_list' %}">My property</a>
                     </li>
                     <li class="nav-item"></li>
                         <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}" href="{% url 'account_logout' %}">Logout</a>
@@ -86,6 +92,7 @@
             </div>
         </div>
     </nav>
+    </header>
 
     <!-- displaying Django messages -->
     <div class="container">

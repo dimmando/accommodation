@@ -11,12 +11,11 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.utils.html import mark_safe
 from django.contrib import admin
 
-# Create your models here.
-
 
 class BookPost(models.Model):
     """
-    
+    Model to store user's data that they input into the form when create
+    their own property that would like to propose for guest's accommodation
     """
 
     ACCOMMODATION_TYPES = [
