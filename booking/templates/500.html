@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 mx-auto py-5 text-center">
+            <h2>500 Error</h2>
+            <h4>Oops! Looks like we're experiencing an error!</h4>
+            <a class="home-button btn btn-success my-3" href="{% url 'home' %}" aria-label="500 Error, return to home">Return to Homepage</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

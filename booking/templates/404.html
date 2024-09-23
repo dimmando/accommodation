@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 mx-auto py-5">
+        <h2>404 Error</h2>
+        <h4>This page has not been found</h4>
+        <a class="home-button btn btn-success my-3" href="{% url 'home' %}" aria-label="404 Error, return to home">Return to Homepage</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
