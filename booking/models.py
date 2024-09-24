@@ -11,6 +11,8 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.utils.html import mark_safe
 from django.contrib import admin
 
+from django.templatetags.static import static
+
 
 class BookPost(models.Model):
     """
@@ -55,16 +57,21 @@ class BookPost(models.Model):
     def get_absolute_url(self):
         """
         Get absolute url to redirect the user to the page
-        for the book they just posted.
+        for the property they just posted.
         https://www.youtube.com/watch?v=-s7e_Fy6NRU
         https://ngangasn.com/what-is-get_absolute_url-in-django/
         """
         return reverse('book_detail', args=[str(self.slug)])
 
     def image_tag(self):
-        if self.booking_image:
-            return mark_safe(f'<img src="{self.booking_image.url}" width="150" height="150" />')
-        return "No Image"
+        if 'placeholder' in self.booking_image.url:
+            placeholder_url = static('images/default.png')
+            return mark_safe(f'<img src="{placeholder_url}" width="150" height="150" alt="Placeholder Image" />')
+        return mark_safe(f'<img src="{self.booking_image.url}" width="150" height="150" />')
+
+        # if self.booking_image:
+        #     return mark_safe(f'<img src="{self.booking_image.url}" width="150" height="150" />')
+        # return "No Image"
 
     image_tag.short_description = 'Image Preview'
 

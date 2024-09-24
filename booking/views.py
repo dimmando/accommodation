@@ -122,7 +122,7 @@ class BookDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class PropertyView(LoginRequiredMixin, generic.ListView):
     """
     https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-display/
-    View from generic for viewing the current book posts
+    View from generic for viewing the current booking posts
     """
     model = BookPost
     # queryset = BookPost.objects.order_by('-created_on')

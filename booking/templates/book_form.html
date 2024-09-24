@@ -6,14 +6,35 @@
 
 <!-- book form container with bootstrap margin on top and bottom -->
 <div class="container-fluid col-sm-6 mb-5">
-    <h1 class="text-center">Your Property Details</h1>
-    <div class="row">
-    {% if user.is_authenticated %}
-        <!-- add csrf token and crispy forms -->
-        {% csrf_token %} {% crispy form %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form|crispy }}
+    
+        {% if form.instance.booking_image %}
+            <div class="current-image my-3">
+                <h5>Current Image:</h5>
+                {% if form.instance.booking_image or 'placeholder' in form.instance.booking_image.url %}
+                    <img src="{% static 'images/default.png' %}" alt="Placeholder Image" width="150">
+                {% elif form.instance.booking_image %}
+                    <img src="{{ form.instance.booking_image.url }}" alt="Current Image" width="150">
+                {% else %}
+                    <h5>No current image yet</h5>
+                {% endif %}
 
-    {% endif %}
-    </div>
+                <!-- {% if 'placeholder' in form.instance.booking_image.url %}
+                    <img src="{% static 'images/default.png' %}" alt="Placeholder Image" width="150">
+                {% elif form.instance.booking_image %}
+                    <img src="{{ form.instance.booking_image.url }}" alt="Current Image" width="150">
+                {% else %}
+                    <h5>No current image yet</h5>
+                {% endif %} -->
+            </div>
+        {% endif %}
+        
+        <button type="submit" class="btn btn-success">Add Property!</button>
+    </form>
+    
 </div>
 
 {% endblock content %}

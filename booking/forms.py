@@ -24,12 +24,18 @@ class BookForm(forms.ModelForm):
             'owner_phone',
         ]
 
+        widgets = {
+            'booking_image': forms.FileInput(attrs={'class': 'custom-file-input'}),
+        }
 
     def __init__(self, *args, **kwargs):
-        """
-        https://django-crispy-forms.readthedocs.io/en/latest/layouts.html
-        """
+
         super(BookForm, self).__init__(*args, **kwargs)
+
+        # Hide the image field if not required during the update
+        if self.instance and self.instance.pk:
+            self.fields['booking_image'].required = False
+
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Field('title'),
