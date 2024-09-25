@@ -28,7 +28,7 @@ class BookView(generic.ListView):
         query = self.request.GET.get("q")
         if query:
             book_list = self.model.objects.filter(
-                Q(title__contains=query)
+                Q(title__icontains=query)
                 | Q(description__icontains=query)
                 | Q(accommodation_type__icontains=query)
                 | Q(city__icontains=query),
