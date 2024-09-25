@@ -11,16 +11,25 @@
         
         {{ form|crispy }}
     
-        {% if form.instance.booking_image %}
             <div class="current-image my-3">
                 <h5>Current Image:</h5>
-                {% if form.instance.booking_image or 'placeholder' in form.instance.booking_image.url %}
+                {% if form.instance.booking_image %}
+                    {% if 'placeholder' in form.instance.booking_image.url %}
+                        <img src="{% static 'images/default.png' %}" alt="Placeholder Image" width="150">
+                    {% else %}
+                        <img src="{{ form.instance.booking_image.url }}" alt="Current Image" width="150">
+                    {% endif %}
+                {% else %}
+                    <h5>No current image yet</h5>
+                {% endif %}
+                
+                <!-- {% if form.instance.booking_image or 'placeholder' in form.instance.booking_image.url %}
                     <img src="{% static 'images/default.png' %}" alt="Placeholder Image" width="150">
                 {% elif form.instance.booking_image %}
                     <img src="{{ form.instance.booking_image.url }}" alt="Current Image" width="150">
                 {% else %}
                     <h5>No current image yet</h5>
-                {% endif %}
+                {% endif %} -->
 
                 <!-- {% if 'placeholder' in form.instance.booking_image.url %}
                     <img src="{% static 'images/default.png' %}" alt="Placeholder Image" width="150">
@@ -30,7 +39,6 @@
                     <h5>No current image yet</h5>
                 {% endif %} -->
             </div>
-        {% endif %}
         
         <button type="submit" class="btn btn-success">Add Property!</button>
     </form>
@@ -38,7 +46,3 @@
 </div>
 
 {% endblock content %}
-
-{% block copyright %}
-Copyright 2023 by DIMMANDO
-{% endblock %}

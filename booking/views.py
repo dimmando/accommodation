@@ -6,6 +6,11 @@ from django.contrib import messages
 from django.urls import reverse
 from .models import BookPost
 from .forms import BookForm
+from django.db.models import Q
+
+
+def about_view(request):
+    return render(request, 'about.html')
 
 
 class BookView(generic.ListView):
@@ -18,6 +23,19 @@ class BookView(generic.ListView):
     template_name = 'index.html'
     context_object_name = 'book_list'
     paginate_by = 6
+
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get("q")
+        if query:
+            book_list = self.model.objects.filter(
+                Q(title__contains=query)
+                | Q(description__icontains=query)
+                | Q(accommodation_type__icontains=query)
+                | Q(city__icontains=query),
+            )
+        else:
+            book_list = self.model.objects.order_by('-created_on')
+        return book_list
 
 
 class BookDetail(View):

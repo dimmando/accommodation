@@ -211,3 +211,19 @@ body {
 .h5, h5 {
     font-size: 1rem;
 }
+
+.small-input {
+    width: 200px; /* Уменьшение ширины поля */
+    font-size: 14px; /* Уменьшение шрифта */
+    padding: 4px 3px; /* Уменьшение внутреннего отступа */
+}
+
+.small-button {
+    width: 60px;
+    font-size: 14px; /* Уменьшение шрифта кнопки */
+    padding: 4px 3px; /* Уменьшение внутреннего отступа кнопки */
+}
+
+.form-center {
+    align-self: center !important;
+}
