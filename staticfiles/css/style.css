@@ -185,6 +185,9 @@ body {
 	font-size: 20px;
 	text-decoration: none;
 }
+.input-group-text {
+    display: none !important;
+}
 .list-pages .page-num, .page-num-selected {
 	display: inline-block;
 	width: 40px;
@@ -203,4 +206,24 @@ body {
 }
 .list-pages .page-num-selected:hover {
 	box-shadow: none;
+}
+
+.h5, h5 {
+    font-size: 1rem;
+}
+
+.small-input {
+    width: 200px;
+    font-size: 14px;
+    padding: 4px 3px;
+}
+
+.small-button {
+    width: 60px;
+    font-size: 14px;
+    padding: 4px 3px;
+}
+
+.form-center {
+    align-self: center !important;
 }

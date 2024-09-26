@@ -213,15 +213,15 @@ body {
 }
 
 .small-input {
-    width: 200px; /* Уменьшение ширины поля */
-    font-size: 14px; /* Уменьшение шрифта */
-    padding: 4px 3px; /* Уменьшение внутреннего отступа */
+    width: 200px;
+    font-size: 14px;
+    padding: 4px 3px;
 }
 
 .small-button {
     width: 60px;
-    font-size: 14px; /* Уменьшение шрифта кнопки */
-    padding: 4px 3px; /* Уменьшение внутреннего отступа кнопки */
+    font-size: 14px;
+    padding: 4px 3px;
 }
 
 .form-center {
