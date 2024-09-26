@@ -4,13 +4,17 @@
 {% load cloudinary %}
 {% load crispy_forms_tags %}
 
-<!-- book form container with bootstrap margin on top and bottom -->
+<!-- Form container to add new property -->
 <div class="container-fluid col-sm-6 mb-5">
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         
         {{ form|crispy }}
-    
+            
+            <!-- Conditions what to display: 
+            'No current image yet' text if record in DB is not exist yet at the moment of adding a new property;
+            Placeholder image during editing details of property if user didn't add their picture when added property in the past;
+            User's existing picture during editing details of property -->
             <div class="current-image my-3">
                 <h5>Current Image:</h5>
                 {% if not form.instance.pk %}

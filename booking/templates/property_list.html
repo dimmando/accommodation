@@ -2,9 +2,9 @@
 {% block content %}
 {% load static %}
 
-
+<!-- Loop to display all property related to exact user -->
 {% for property in property_list %}
-<!-- {% if property.post_owner == request.user %} -->
+{% if property.post_owner == request.user %}
 
 <div class="container">
     <div class="row p-4 d-flex justify-content-around">
@@ -62,7 +62,7 @@
 <hr>
 {% endif %}
 
-<!-- {% endif %} -->
+{% endif %}
 
 {% empty %}
 <div class="container-fluid col-sm-6 mt-5 mb-5 text-center">
