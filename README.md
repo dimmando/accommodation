@@ -214,7 +214,6 @@ The site can be accessed by this [link](https://accommodation-02410f422b40.herok
 - [Git](https://git-scm.com/) - Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub
 - [GitHub](https://github.com/) - GitHub was used to store the project's code after being pushed from Git
 - [Heroku](https://id.heroku.com) - Heroku was used to deploy the live project
-- [Lucidchart](https://lucid.app/) - was used to design the database schema
 - [Awesome Screenshot](chrome-extension://nlipoenfbbikpbjkfpfillcgkoblgpmj/option-react.html) - Chrome extension was used to making screenshots 
 
 
@@ -242,17 +241,40 @@ The site can be accessed by this [link](https://accommodation-02410f422b40.herok
 #### Mobile devices
 
 - [Home Page. Mobile Screen](documentation/mobile_home_page.jpg)
-- [Gallery Page. Mobile Screen](documentation/mobile_gallery_page.jpg)
-- [Contact Page. Mobile Screen](documentation/mobile_booking_page.jpg)
-- [Response Page. Mobile Screen](documentation/mobile_response_page.jpg)
-
+- [About Page. Mobile Screen](documentation/mobile_about.jpg)
+- [Add property Page. Mobile Screen](documentation/mobile_add.jpg)
+- [My Property Page. Mobile Screen](documentation/mobile_my.jpg)
+- [Sign Up/Login/Logout. Mobile Screen](documentation/mobile_sign.jpg)
+- [Detailed View. Mobile Screen](documentation/mobile_detailed.jpg)
 
 #### Tablets/Desktop
 
-- [Home Page. Tablet/Desktop Screen](documentation/tablet_home_page.jpg)
-- [Gallery Page. Tablet/Desktop Screen](documentation/tablet_gallery_page.jpg)
-- [Contact Page. Tablet/Desktop Screen](documentation/tablet_booking_page.jpg)
-- [Response Page. Tablet/Desktop Screen](documentation/tablet_response_page.jpg)
+- [Home Page. Desktop Screen](documentation/desktop_home_page.jpg)
+- [About Page. Desktop Screen](documentation/desktop_about.jpg)
+- [Add property Page. Desktop Screen](documentation/desktop_add.jpg)
+- [My Property Page. Desktop Screen](documentation/desktop_my.jpg)
+- [Sign Up/Login/Logout. Desktop Screen](documentation/desktop_sign.jpg)
+- [Detailed View. Desktop Screen](documentation/desktop_detailed.jpg)
+
+### DataBase Diagram
+Below is the database diagram that I created
+
+- [DataBase Diagram](documentation/db_diagram.jpg)
+
+---
+
+### Agile Methodology
+The Agile Methodology was used to plan this project. I found it hard to work parallel on agile and on my coding. I had to add a few things at the end of my project in github repository. I did learn more towards the end of the project about the use of the agile develepment, and why it's important and usefull to keep track of the whole process and to implement as much as you can. 
+I've used Github and the Project Board with use of the Kanban board.
+
+I devided project board into 4 sections:
+
+  - Todo - All the User stories were initially entered in the 'Todo'
+  - In Progress - then during development workflow they were moved into the 'In Progress'
+  - Done - finally they get moved into 'Done' once the development complete
+  - Won't have - were added as a Future Feature
+
+Each user story have acceptance criteria and tasks that needed to be done to accomplish that criteria.
 
 ---
 
