@@ -88,48 +88,17 @@ As a Frequent and registered user I can delete property I added before. | I can 
 
  ### Manual Testing
 
- #### Welcome screen and question "Let's get started?"
-
-<details><summary>Screenshot</summary>
-<img src="documentation/welcome.png">
-</details>
-
-  - I've tested that the input field for choosing "Y" or "N" takes only  letter "y", "Y", "n", "N" and nothing else and that error message is displayed to the user that warns the user of his input
-
- #### Check the height input 
-
-<details><summary>Screenshot</summary>
-<img src="documentation/height.png">
-</details>
-
-   - I've tested that on prompt to user input the height only real range of height is allowed and no letters allowed. Only numbers. And that  error message is shown to the user and promt to enter real height.
-
- #### Check the weight input 
-
-<details><summary>Screenshot</summary>
-<img src="documentation/weight.png">
-</details>
-
-  - I've tested that on prompt to user input the weight only real range of weight is allowed and no letters allowed. Only numbers. And that  error message is shown to the user and promt to enter real weight.
-
- #### Conclusion screen
-
-<details><summary>Screenshot</summary>
-<img src="documentation/result.png">
-</details>
-
-  - I've tested that the input field for choosing "Y" or "N" on conclusion screen with the question ether user wants to take test again takes only letter "y", "Y", "n", "N" and nothing else and that error message is displayed to the user that warns the user of his input.
-
-
+  - Different users tested all site functionality including adding property in the form and no any errors displayed to the users. All works well and property sucessfully adds to database with user pictures or with placeholder picture. Also Edit and Delete functionality are working well. So CRUD requirements are met.
+ 
 ## Bugs
 + ### Solved bugs
-    Bugs were found during formatting, styling and coloring welcome description, questions and providing answers on questions. Also in formatting result for good UX.
+    Bugs were found during working with form because of the Crispy Forms fields are hard to manage. Needed to correct display Current image when editing (if present) or display placeholder instead or even print No image yet message when you only add new property (there were the bugs).
     
-        *Solutions:* refactoring print statements, debugging by isolating some functions, putting numbers and checking output only one function needed to correct.
+        *Solutions:* I solved it by using ChatGPT.com help and changing widget for images behaviour and establish some conditions logic.
 
 + ### Unsolved bugs
     None.
 
 + ### Mistakes
-    No mistakes were found due to very simple math calculations.    
+    No mistakes were found.   
 ---
