@@ -12,33 +12,42 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
     - FireFox:
 
-    ![FireFox](documentation/firefox.png)
+    ![FireFox](documentation/firefox.jpg)
 
     - Edge:
 
-    ![Edge](documentation/edge.png)
+    ![Edge](documentation/edge.jpg)
 
 ## Responsiveness
 
++ The website was checked by Responsive Viewer - Chrome browser extension
+    - iPad-Air-5-Resolution: 820x1276
+    ![Main Page](documentation/iPad-Air-5-820x1276.png)
+    
+    - iPhone-14-Pro Resolution: 393x3063
+    ![Main Page](documentation/iPhone-14-Pro-393x3063.png)
+    
+    - iPhone-14-Pro-Max Resolution: 430x3229
+    ![Main Page](documentation/iPhone-14-Pro-Max-430x3229.png)
+    
+    - Macbook-Air Resolution: 1559x1761
+    ![Main Page](documentation/Macbook-Air-1559x1761.png)
+    
+    - Pixel-7-Pro Resolution: 480x3461
+    ![Main Page](documentation/Pixel-7-Pro-480x3461.png)
 
-+ The website was checked by Responsive Viewer - a trial version of Chrome browser extension:
 
-    ![Responsive Viever](documentation/responsive-viewer.png)
-
-    - Main Page:
-
-    ![Main Page](documentation/responsiveness_main_page.png)
-
-
-+ The functionality of the Car Logos Quiz website was checked as well by different users.
++ The functionality of the SWEET HOME accommodation website was checked as well by different users.
 
 ---
 ## Validator testing
 
 + ### HTML (Home Page)
-  No errors or warnings were found when passing through the official W3C validator.
+  Source code of all HTML-pages were tested by the official W3C validator.
+  No errors or warnings were found when passing tests.
+  Here is the PDF document that contains screenshots of all tests:
 
-  ![Home Page HTML Validator](documentation/w3_validator_home_page.png)
+  ![HTML Validator](documentation/html-validation.pdf)
         
 + ### CSS
   No errors or warnings were found when passing through the official W3C (Jigsaw) validator
