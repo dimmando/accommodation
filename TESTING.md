@@ -64,21 +64,13 @@ In order to confirm the correct functionality, responsiveness, and appearance:
   No errors or warnings were found when passing tests.
   Here is the PDF document that contains screenshots of all tests:
 
-  [HTML Validator](documentation/python-valid.pdf)
+  [Python Validator](documentation/python-valid.pdf)
   
 ## LightHouse report
 
   Using lighthouse in devtools I confirmed that the website is performing well, accessible and colors and fonts chosen are readable.
-    
-  ### Home page
-
-  + Mobile version
-
-  ![Home Page Lighthouse Mobile](documentation/lighthouse_home_page.png)
-
-  + Desktop version
   
-  ![Home Page Lighthouse Desktop](documentation/lighthouse_home_page_desk.png)
+  ![Home Page Lighthouse Desktop](documentation/lighthouse_home_page.png)
 ---
 
 ## Testing user stories
