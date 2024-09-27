@@ -77,12 +77,14 @@ In order to confirm the correct functionality, responsiveness, and appearance:
  
 User Story |  Test | Pass
 --- | --- | :---:
-I want to quickly understand the program's primary purpose so that I can learn more what that program is about. | I can read welcome text with the description of the program just in the center of the screen | &check;​
-I want to navigate through the program easily so that I can find the content | I can easily go step by step through the test answering the questions | &check;​
-I want to find the program useful for myself so that I can fulfill my expectations | The program is made for helth life style main purpose so can be interesting to anyone| &check;
-I want to pass through the questionnaire if I didn't yet so I can start it just in one click | I can choose and input only one button "y" to easily start the test | &check;
-I want to see my final points and recommendations what to do so it's information always be there | I can easily pass through the test step by step and final points and recommendations will always be at the end despite on how to answer on questions | &check;
-I want to have possibility restart the program if I forgot some parameters or wasn't ready or something have changed in my life so I can restart the questionnaire | I can easily restart the program at the end to test again. The program can work in the loop | &check;
+I want to easily understand the main purpose of the site. | I can read about type of organization and services provided on the About page. | &check;​
+I want to be able easily navigate through the website | I can find the content required either by navigate pages using switchers at the bottom of the main page or using Search form at the top in navigation section. | &check;​
+I want to see some details like descriptions and prices to compare it with the others. | I can see each property details as I can ckick on link under the title and short description of each property card.| &check;
+I can Register on this site so I can Sign In into it and Logout from there. | I really can Register on this site by go to Register page and then I can Sign In into it and Logout from there. | &check;
+As a Returning Visitor and real estate owner I can fill in a form with details about my property to propose it everyone. | I can go to Add property page, fill in a form with details about my property and submit it. | &check;
+As a Returning Visitor, registered and logged in user I can see full list of my own real estate, separated by each individual property with their details. | When I registered and logged in I can go to My property page and see full list of my own real estate, separated by each individual property with their details. | &check;
+As a Frequent and registered user I can edit property details added by me earlier. | I can update all info regarding each of my property pressing button Edit either on Detailed view page of my own property or into My property page choosing which exact property from the list to Edit. | &check;
+As a Frequent and registered user I can delete property I added before. | I can delete each of my property separately pressing button Delete either on Detailed view page of my own property or into My property page choosing which exact property from the list to Delete. | &check;
 
  ### Manual Testing
 

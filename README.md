@@ -21,7 +21,7 @@ The site can be accessed by this [link](https://accommodation-02410f422b40.herok
 
 * As a Returning Visitor and potential SWEET HOME accommodation services site user I can Register on this site so I can Sign In into it and Logout from there.
 * As a Returning Visitor and real estate owner I can fill in a form with details about my property to propose it everyone.
-* As a Returning, registered and logged in user I can see full list of my own real estate, separated by each individual property with their details.
+* As a Returning Visitor, registered and logged in user I can see full list of my own real estate, separated by each individual property with their details.
 
 ### Frequent Visitor Goals:
 
