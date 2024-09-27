@@ -42,38 +42,30 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 ---
 ## Validator testing
 
-+ ### HTML (Home Page)
++ ### HTML
   Source code of all HTML-pages were tested by the official W3C validator.
   No errors or warnings were found when passing tests.
   Here is the PDF document that contains screenshots of all tests:
 
-  ![HTML Validator](documentation/html-validation.pdf)
+  [HTML Validator](documentation/html-validation.pdf)
         
 + ### CSS
   No errors or warnings were found when passing through the official W3C (Jigsaw) validator
 
-  ![CSS validator errors](documentation/w3_validator_css_errors.png)
+  ![CSS validator](documentation/css-valid.png)
 
 + ### JavaScript
-  No errors or warnings were found when passing through the official JSHint validator
-
-  ![JavaScript validator errors](documentation/jshint_validator.png)  
+  Small parts of JavaScript were included into html-file base.html. 
+  No separated JavaScript file were used in the project.
 
 + ###  Python
 
-+ ### Validated code of the file "run.py"
-  No errors or warnings were found when passing through the PEP8 Python Validator.
+  Source code of all custom .py-files were tested by the PEP8 Python Validator.
+  No errors or warnings were found when passing tests.
+  Here is the PDF document that contains screenshots of all tests:
 
-  ![run.py Validated](documentation/run.png)
-        
-+ ### Validated code of the file "introduction.py"
-  No errors or warnings were found when passing through the PEP8 Python Validator.
-
-  ![introduction.py Validated](documentation/intro.png)
-
-
-
-
+  [HTML Validator](documentation/python-valid.pdf)
+  
 ## LightHouse report
 
   Using lighthouse in devtools I confirmed that the website is performing well, accessible and colors and fonts chosen are readable.
